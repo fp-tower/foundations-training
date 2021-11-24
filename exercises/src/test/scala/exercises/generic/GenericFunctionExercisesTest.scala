@@ -21,11 +21,15 @@ class GenericFunctionExercisesTest extends AnyFunSuite with ScalaCheckDrivenProp
   }
 
   ignore("Pair map") {
-    assert(Pair(0, 1).map(identity) == Pair(0, 1))
+    assert(Pair(0, 1).map(_ + 1) == Pair(1, 2))
+    assert(Pair("hello", "world").map(_.take(2)) == Pair("he", "wo"))
   }
 
   ignore("Pair zipWith") {
     assert(Pair(0, 1).zipWith(Pair(2, 3))(_ + _) == Pair(2, 4))
+
+    def replicate(iteration: Int, word: String): String = word * iteration
+    assert(Pair(2, 3).zipWith(Pair("Hello ", "World "))(replicate) == Pair("Hello Hello ", "World World World "))
   }
 
   ignore("Pair decoded") {

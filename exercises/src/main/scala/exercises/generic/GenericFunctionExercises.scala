@@ -72,8 +72,11 @@ object GenericFunctionExercises {
   val isEven: Predicate[Int] =
     Predicate((number: Int) => number % 2 == 0)
 
+  lazy val isOdd: Predicate[Int] =
+    isEven.flip
+
   lazy val isOddPositive: Predicate[Int] =
-    isEven.flip && isPositive
+    isOdd && isPositive
 
   case class Predicate[A](eval: A => Boolean) {
     // DSL to call a predicate like a function
