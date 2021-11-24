@@ -1,6 +1,7 @@
 package exercises.valfunction
 
 import exercises.valfunction.ValueFunctionExercises._
+import org.scalacheck.Gen
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 

@@ -42,6 +42,8 @@ object ValueFunctionExercises {
   // Exercise 2: Point
   ///////////////////////
 
+  val zero = Point(0, 0, 0)
+
   case class Point(x: Int, y: Int, z: Int) {
     // 2a. Implement `isPositive` which returns true if `x`, `y` and `z` are all greater or equal to 0, false otherwise
     // such as Point(2, 4,9).isPositive == true

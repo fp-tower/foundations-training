@@ -47,7 +47,7 @@ package object imperative {
   // 5. Refactor `readDateOfBirthRetry` using `retry` and `onError` in `UserCreationExercises`.
 
   //////////////////////////////////////////////
-  // Bonus questions (not covered by the video)
+  // Bonus questions
   //////////////////////////////////////////////
 
   // 6. Write a property based for `retry`. For example,

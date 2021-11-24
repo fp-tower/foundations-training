@@ -55,7 +55,7 @@ object GenericFunctionExercises {
     ???
 
   //////////////////////////////////////////////
-  // Bonus question (not covered by the video)
+  // Bonus question
   //////////////////////////////////////////////
 
   // 1f. Can you implement a method on `Pair` similar to `zipWith`, but that combines 3
@@ -181,7 +181,7 @@ object GenericFunctionExercises {
     ???
 
   //////////////////////////////////////////////
-  // Bonus question (not covered by the video)
+  // Bonus question
   //////////////////////////////////////////////
 
   // 3f. How would you define and implement a `JsonDecoder` for a generic `Option`?

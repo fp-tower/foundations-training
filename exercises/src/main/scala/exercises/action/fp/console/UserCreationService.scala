@@ -117,7 +117,7 @@ class UserCreationService(console: Console, clock: Clock) {
   // 15. Simplify the code of `onError` and `retry` using `handleErrorWith`
 
   //////////////////////////////////////////////
-  // Bonus question (not covered by the videos)
+  // Bonus question
   //////////////////////////////////////////////
 
   // 16. `onError` takes a `cleanup` function which returns an IO.

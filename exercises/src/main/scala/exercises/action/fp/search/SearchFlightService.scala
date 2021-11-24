@@ -72,7 +72,7 @@ object SearchFlightService {
   //    5. aggregate results from client 1 and 2
 
   //////////////////////////////////////////////
-  // Bonus question (not covered by the videos)
+  // Bonus question
   //////////////////////////////////////////////
 
   // 10. `fromClients` wait for the results from every single client. This means that

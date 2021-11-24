@@ -12,8 +12,8 @@ object JsonExercises {
       case _: JsonNumber   => json
       case JsonString(str) => JsonString(str.trim)
       case JsonObject(obj) =>
-        val newObj = obj.map {
-          case (key, value) => (key, trimAll(value))
+        val newObj = obj.map { case (key, value) =>
+          (key, trimAll(value))
         }
         JsonObject(newObj)
     }
@@ -57,7 +57,7 @@ object JsonExercises {
     ???
 
   //////////////////////////////////////////////
-  // Bonus question (not covered by the video)
+  // Bonus question
   //////////////////////////////////////////////
 
   // d. Add the missing cases to JSON enumeration: JsonBoolean, JsonArray and JsonNull.

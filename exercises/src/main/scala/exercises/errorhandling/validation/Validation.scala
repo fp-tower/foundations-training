@@ -74,7 +74,7 @@ object Validation {
     }
 
   //////////////////////////////////////////////
-  // Bonus question (not covered by the videos)
+  // Bonus question
   //////////////////////////////////////////////
 
   // Accumulate all errors.

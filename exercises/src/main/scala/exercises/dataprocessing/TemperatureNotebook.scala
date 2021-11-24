@@ -23,7 +23,7 @@ object TemperatureNotebook extends App {
 
   val rows: List[Either[ReadError, Sample]] = reader.toList
 
-  val failures: List[ReadError] = rows.collect { case Left(error)   => error }
+  val failures: List[ReadError] = rows.collect { case Left(error) => error }
   val samples: List[Sample]     = rows.collect { case Right(sample) => sample }
 
   // we can also extract failures and successes in one go using `partitionMap`
@@ -56,7 +56,7 @@ object TemperatureNotebook extends App {
   // * TODO ParList parFoldMap
   bench("sum", iterations = 200, warmUpIterations = 40, ignore = true)(
     Labelled("List foldLeft", () => samples.foldLeft(0.0)((state, sample) => state + sample.temperatureFahrenheit)),
-    Labelled("List map + sum", () => samples.map(_.temperatureFahrenheit).sum),
+    Labelled("List map + sum", () => samples.map(_.temperatureFahrenheit).sum)
 //    Labelled("ParList foldMap", () => ???),
 //    Labelled("ParList parFoldMap", () => ???),
   )
@@ -70,11 +70,11 @@ object TemperatureNotebook extends App {
     Labelled("List 4 iterations", () => TemperatureExercises.summaryList(samples)),
     Labelled("List 1 iteration", () => TemperatureExercises.summaryListOnePass(samples)),
     Labelled("ParList 4 iterations", () => TemperatureExercises.summaryParList(parSamples)),
-    Labelled("ParList 1 iteration", () => TemperatureExercises.summaryParListOnePass(parSamples)),
+    Labelled("ParList 1 iteration", () => TemperatureExercises.summaryParListOnePass(parSamples))
   )
 
   //////////////////////////////////////////////
-  // Bonus question (not covered by the video)
+  // Bonus question
   //////////////////////////////////////////////
 
   // Generalise Monoid sum to accept all types of number (Hint: check `Numeric`, e.g. Numeric[Int], `Numeric[Double]`)

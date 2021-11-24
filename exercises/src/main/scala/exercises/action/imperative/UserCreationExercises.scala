@@ -141,7 +141,7 @@ object UserCreationExercises {
   // when entering their date of birth and mailing list subscription flag.
 
   //////////////////////////////////////////////
-  // Bonus question (not covered by the videos)
+  // Bonus question
   //////////////////////////////////////////////
 
   // 8. Implement `readSubscribeToMailingListRetry` using a while-loop instead of a recursion.

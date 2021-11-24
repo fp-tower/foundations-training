@@ -92,7 +92,7 @@ object OptionExercises {
     sequence(values.map(transform))
 
   //////////////////////////////////////////////
-  // Bonus question (not covered by the videos)
+  // Bonus question
   //////////////////////////////////////////////
 
   // 6. Implement `asEditor` which checks if the current `Role` is an `Editor`.

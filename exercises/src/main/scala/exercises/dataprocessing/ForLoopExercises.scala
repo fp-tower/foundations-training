@@ -44,7 +44,7 @@ object ForLoopExercises {
   // function you defined above.
 
   //////////////////////////////////////////////
-  // Bonus question (not covered by the video)
+  // Bonus question
   //////////////////////////////////////////////
 
   // f. `foldLeft` can be used to implement most of the List API.
