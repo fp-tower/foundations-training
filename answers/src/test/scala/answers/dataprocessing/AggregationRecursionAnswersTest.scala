@@ -1,10 +1,10 @@
 package answers.dataprocessing
 
-import answers.dataprocessing.StackSafeRecursiveAnswers._
+import answers.dataprocessing.AggregationRecursionAnswers._
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 
-class StackSafeRecursiveAnswersTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks {
+class AggregationRecursionAnswersTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks {
 
   val largeSize = 100000
 

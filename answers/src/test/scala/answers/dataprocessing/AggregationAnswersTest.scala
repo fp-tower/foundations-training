@@ -1,10 +1,10 @@
 package answers.dataprocessing
 
-import answers.dataprocessing.ForLoopAnswers._
+import answers.dataprocessing.AggregationAnswers._
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 
-class ForLoopAnswersTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks {
+class AggregationAnswersTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks {
 
   test("sum") {
     assert(sum(List(1, 5, 2)) == 8)

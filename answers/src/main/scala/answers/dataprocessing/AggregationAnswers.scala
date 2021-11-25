@@ -1,6 +1,6 @@
 package answers.dataprocessing
 
-object ForLoopAnswers {
+object AggregationAnswers {
 
   def sum(numbers: List[Int]): Int = {
     var total = 0
