@@ -20,12 +20,7 @@ object AggregationExercises {
   def min(numbers: List[Int]): Option[Int] =
     ???
 
-  // b. Implement `minRecursive` which returns the same result as `min`
-  // but using a recursion instead of a for loop
-  def minRecursive(numbers: List[Int]): Option[Int] =
-    ???
-
-  // c. Implement `wordCount` using either a a for loop or a recursion.
+  // c. Implement `wordCount` using a for loop.
   // `wordCount` compute how many times each word appears in a `List`
   // such as wordCount(List("Hi", "Hello", "Hi")) == Map("Hi" -> 2, "Hello" -> 1)
   // and     wordCount(Nil) == Map.empty

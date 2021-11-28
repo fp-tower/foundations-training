@@ -22,11 +22,6 @@ class AggregationExercisesTest extends AnyFunSuite with ScalaCheckDrivenProperty
     assert(min(Nil) == None)
   }
 
-  ignore("min recursive") {
-    assert(minRecursive(List(2, 5, 1, 8)) == Some(1))
-    assert(minRecursive(Nil) == None)
-  }
-
   ignore("wordCount") {
     assert(wordCount(List("Hi", "Hello", "Hi")) == Map("Hi" -> 2, "Hello" -> 1))
     assert(wordCount(Nil) == Map.empty)

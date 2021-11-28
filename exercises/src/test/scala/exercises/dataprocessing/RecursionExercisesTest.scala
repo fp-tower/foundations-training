@@ -2,9 +2,14 @@ package exercises.dataprocessing
 
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
-import exercises.dataprocessing.JsonExercises._
+import exercises.dataprocessing.RecursionExercises._
 
-class JsonExercisesTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks {
+class RecursionExercisesTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks {
+
+  /////////////////////////////////////////////////////
+  // Exercise 1: Json
+  /////////////////////////////////////////////////////
+
   val john: Json = JsonObject(
     Map(
       "name" -> JsonString(" John Doe "),
@@ -12,9 +17,9 @@ class JsonExercisesTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks 
       "address" -> JsonObject(
         Map(
           "street-number" -> JsonNumber(25),
-          "street-name"   -> JsonString("  Cody Road"),
+          "street-name"   -> JsonString("  Cody Road")
         )
-      ),
+      )
     )
   )
 
@@ -27,9 +32,9 @@ class JsonExercisesTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks 
           "address" -> JsonObject(
             Map(
               "street-number" -> JsonNumber(25),
-              "street-name"   -> JsonString("Cody Road"),
+              "street-name"   -> JsonString("Cody Road")
             )
-          ),
+          )
         )
       )
     )
@@ -44,9 +49,9 @@ class JsonExercisesTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks 
           "address" -> JsonObject(
             Map(
               "street-number" -> JsonNumber(0),
-              "street-name"   -> JsonString("***"),
+              "street-name"   -> JsonString("***")
             )
-          ),
+          )
         )
       )
     )
@@ -67,5 +72,28 @@ class JsonExercisesTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks 
     assert(depth(JsonObject(Map("k" -> JsonNumber(1)))) == 1)
     assert(depth(john) == 2)
   }
+
+  /////////////////////////////////////////////////////
+  // Exercise 2: Stack safety
+  /////////////////////////////////////////////////////
+
+  ignore("unsafeSum is not correct") {}
+
+  ignore("sum") {
+    assert(sum(List(1, 5, 2)) == 8)
+    assert(sum(Nil) == 0)
+  }
+
+  ignore("min") {
+    assert(min(List(2, 5, 1, 8)) == Some(1))
+    assert(min(Nil) == None)
+  }
+
+  ignore("reverse") {
+    assert(reverse(List(2, 5, 1, 8)) == List(8, 1, 5, 2))
+    assert(reverse(Nil) == Nil)
+  }
+
+  ignore("foldLeft") {}
 
 }

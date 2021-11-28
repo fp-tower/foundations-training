@@ -1,6 +1,10 @@
 package exercises.dataprocessing
 
-object JsonExercises {
+object RecursionExercises {
+
+  /////////////////////////////////////////////////////
+  // Exercise 1: Json
+  /////////////////////////////////////////////////////
 
   sealed trait Json
   case class JsonNumber(number: Double)         extends Json
@@ -65,5 +69,37 @@ object JsonExercises {
   // e. add an extra parameter to search so that it limits the depth of the search.
   // such as search({ "user" : { "name" : "John" } }, "o", 2) == true
   // but     search({ "user" : { "name" : "John" } }, "o", 1) == false because "John" is at depth 2
+
+  /////////////////////////////////////////////////////
+  // Exercise 2: Stack safety
+  /////////////////////////////////////////////////////
+
+  // a. write a test which shows that `unsafeSum` is not correct
+  def unsafeSum(numbers: List[Int]): Int =
+    numbers match {
+      case Nil          => 0
+      case head :: tail => head + unsafeSum(tail)
+    }
+
+  // b. write a new recursive implement of `sum` which doesn't have the same issue
+  def sum(numbers: List[Int]): Int =
+    ???
+
+  // c. Implement `min` using a recursion
+  // such as min(List(2,5,1,8)) == Some(1)
+  // and     min(Nil) == None
+  def min(numbers: List[Int]): Option[Int] =
+    ???
+
+  // d. Implement `reverse` using a recursion
+  // such as reverse(List(2,5,1,8)) == List(8,1,5,2)
+  // and     reverse(Nil) == Nil
+  // Note: Ensure size is stack-safe
+  def reverse[A](items: List[A]): List[A] = ???
+
+  // e. Implement `foldLeft` using a recursion
+  // Note: Ensure size is stack-safe
+  def foldLeft[From, To](items: List[From], default: To)(combine: (To, From) => To): To =
+    ???
 
 }
