@@ -1,9 +1,8 @@
-package answers.dataprocessing
-
-import java.time.LocalDate
+package answers.dataprocessingpar
 
 import org.scalacheck.{Arbitrary, Gen}
 
+import java.time.LocalDate
 import scala.concurrent.ExecutionContext.global
 
 trait ParListTestInstances {
@@ -18,23 +17,22 @@ trait ParListTestInstances {
           ("Europe", "France", None, "Bordeaux"),
           ("Europe", "Germany", None, "Munich"),
           ("North America", "US", Some("Florida"), "Jacksonville"),
-          ("North America", "US", Some("California"), "Fresno"),
+          ("North America", "US", Some("California"), "Fresno")
         )
         minDate = LocalDate.of(1975, 1, 1)
         maxDate = LocalDate.of(2020, 1, 1)
         date        <- Gen.choose[Long](minDate.toEpochDay, maxDate.toEpochDay).map(LocalDate.ofEpochDay)
         temperature <- Gen.choose(-50.0f, 150.0f)
-      } yield
-        Sample(
-          region = region,
-          country = country,
-          state = state,
-          city = city,
-          month = date.getMonthValue,
-          day = date.getDayOfMonth,
-          year = date.getYear,
-          temperatureFahrenheit = temperature
-        )
+      } yield Sample(
+        region = region,
+        country = country,
+        state = state,
+        city = city,
+        month = date.getMonthValue,
+        day = date.getDayOfMonth,
+        year = date.getYear,
+        temperatureFahrenheit = temperature
+      )
     )
 
   def parListGen[A](gen: Gen[A]): Gen[ParList[A]] =
@@ -52,8 +50,12 @@ trait ParListTestInstances {
       sum     <- Gen.choose(-10000000.0f, 10000000.0f)
       size    <- Gen.choose(0, 1000000)
       samples = List(sample1, sample2)
-    } yield
-      SummaryV1(samples.minByOption(_.temperatureFahrenheit), samples.maxByOption(_.temperatureFahrenheit), sum, size)
+    } yield SummaryV1(
+      samples.minByOption(_.temperatureFahrenheit),
+      samples.maxByOption(_.temperatureFahrenheit),
+      sum,
+      size
+    )
 
   implicit val summaryV1Arb: Arbitrary[SummaryV1] = Arbitrary(summaryV1Gen)
 

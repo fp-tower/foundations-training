@@ -1,7 +1,4 @@
-package exercises.dataprocessing
-
-import scala.concurrent.duration.Duration
-import scala.concurrent.{Await, ExecutionContext, Future}
+package exercises.dataprocessingpar
 
 // For example, here is a ParList[Int] with two partitions:
 // ParList(

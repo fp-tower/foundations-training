@@ -1,4 +1,4 @@
-package answers.dataprocessing
+package answers.dataprocessingpar
 
 import scala.concurrent.duration.Duration
 import scala.concurrent.{Await, ExecutionContext, Future}

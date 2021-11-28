@@ -1,7 +1,7 @@
-package exercises.dataprocessing
+package exercises.dataprocessingpar
 
-import exercises.dataprocessing.ThreadPoolUtil.fixedSizeExecutionContext
-import exercises.dataprocessing.TimeUtil.{bench, Labelled}
+import exercises.dataprocessingpar.ThreadPoolUtil.fixedSizeExecutionContext
+import exercises.dataprocessingpar.TimeUtil.{bench, Labelled}
 import kantan.csv._
 import kantan.csv.ops._
 

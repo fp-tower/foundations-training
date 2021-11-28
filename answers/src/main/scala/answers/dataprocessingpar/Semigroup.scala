@@ -1,4 +1,4 @@
-package answers.dataprocessing
+package answers.dataprocessingpar
 
 // A Monoid without default value
 trait Semigroup[A] {

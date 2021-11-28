@@ -1,8 +1,8 @@
-package exercises.dataprocessing
-
-import java.time.LocalDate
+package exercises.dataprocessingpar
 
 import org.scalacheck.{Arbitrary, Gen}
+
+import java.time.LocalDate
 
 trait ParListTestInstances {
   val sampleGen: Gen[Sample] =
@@ -21,17 +21,16 @@ trait ParListTestInstances {
       maxDate = LocalDate.of(2020, 1, 1)
       date        <- Gen.choose[Long](minDate.toEpochDay, maxDate.toEpochDay).map(LocalDate.ofEpochDay)
       temperature <- Gen.choose(-50.0f, 150.0f)
-    } yield
-      Sample(
-        region = region,
-        country = country,
-        state = state,
-        city = city,
-        month = date.getMonthValue,
-        day = date.getDayOfMonth,
-        year = date.getYear,
-        temperatureFahrenheit = temperature
-      )
+    } yield Sample(
+      region = region,
+      country = country,
+      state = state,
+      city = city,
+      month = date.getMonthValue,
+      day = date.getDayOfMonth,
+      year = date.getYear,
+      temperatureFahrenheit = temperature
+    )
   implicit val sampleArb: Arbitrary[Sample] = Arbitrary(sampleGen)
 
   implicit def parListArb[A](implicit arbA: Arbitrary[A]): Arbitrary[ParList[A]] =

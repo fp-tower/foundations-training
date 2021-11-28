@@ -1,4 +1,4 @@
-package answers.dataprocessing
+package answers.dataprocessingpar
 
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks

@@ -1,4 +1,4 @@
-package answers.dataprocessing
+package answers.dataprocessingpar
 
 object TemperatureAnswers {
 
@@ -25,16 +25,13 @@ object TemperatureAnswers {
 
   def averageTemperatureV2(samples: ParList[Sample]): Option[Double] = {
     val (length, sum) = samples.partitions
-      .map(
-        partition =>
-          partition.foldLeft((0, 0.0)) {
-            case ((size, total), sample) =>
-              (size + 1, total + sample.temperatureFahrenheit)
+      .map(partition =>
+        partition.foldLeft((0, 0.0)) { case ((size, total), sample) =>
+          (size + 1, total + sample.temperatureFahrenheit)
         }
       )
-      .foldLeft((0, 0.0)) {
-        case ((size1, total1), (size2, total2)) =>
-          (size1 + size2, total1 + total2)
+      .foldLeft((0, 0.0)) { case ((size1, total1), (size2, total2)) =>
+        (size1 + size2, total1 + total2)
       }
     Option.unless(length == 0)(sum / length)
   }
@@ -55,21 +52,18 @@ object TemperatureAnswers {
         sum = 0.0,
         size = 0
       )
-    )(
-      (state, sample) =>
-        SummaryV1(
-          min = state.min.fold(Some(sample))(
-            current =>
-              if (current.temperatureFahrenheit <= sample.temperatureFahrenheit) Some(current)
-              else Some(sample)
-          ),
-          max = state.max.fold(Some(sample))(
-            current =>
-              if (current.temperatureFahrenheit >= sample.temperatureFahrenheit) Some(current)
-              else Some(sample)
-          ),
-          sum = state.sum + sample.temperatureFahrenheit,
-          size = state.size + 1
+    )((state, sample) =>
+      SummaryV1(
+        min = state.min.fold(Some(sample))(current =>
+          if (current.temperatureFahrenheit <= sample.temperatureFahrenheit) Some(current)
+          else Some(sample)
+        ),
+        max = state.max.fold(Some(sample))(current =>
+          if (current.temperatureFahrenheit >= sample.temperatureFahrenheit) Some(current)
+          else Some(sample)
+        ),
+        sum = state.sum + sample.temperatureFahrenheit,
+        size = state.size + 1
       )
     )
 

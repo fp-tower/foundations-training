@@ -1,4 +1,4 @@
-package answers.dataprocessing
+package answers.dataprocessingpar
 
 import scala.concurrent.duration.Duration
 import scala.concurrent.duration._
@@ -7,7 +7,7 @@ object TimeUtil {
 
   def bench[A](operation: String, iterations: Int = 100, warmUpIterations: Int = 10, ignore: Boolean = false)(
     function1: Labelled[() => A],
-    otherFunctions: Labelled[() => A]*,
+    otherFunctions: Labelled[() => A]*
   ): Unit =
     if (ignore) ()
     else {
@@ -18,9 +18,8 @@ object TimeUtil {
       val maxLabelLength  = allFunctions.map(_.name.length).max
       val times = allFunctions
         .map(
-          _.map(
-            function => 1.to(totalIterations).map(_ => time(function())._2).drop(warmUpIterations)
-          ).map(Elapsed.fromTime)
+          _.map(function => 1.to(totalIterations).map(_ => time(function())._2).drop(warmUpIterations))
+            .map(Elapsed.fromTime)
         )
         .sortBy(_.value.median)
 

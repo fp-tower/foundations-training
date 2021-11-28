@@ -1,4 +1,4 @@
-package answers.dataprocessing
+package answers.dataprocessingpar
 
 trait Monoid[A] extends Semigroup[A] {
   // forAll a: A, combine(a, default) == combiner(default, a) == a
@@ -62,12 +62,11 @@ object Monoid {
       def default: Map[Key, Value] = Map.empty
 
       def combine(first: Map[Key, Value], second: Map[Key, Value]): Map[Key, Value] =
-        second.foldLeft(first) {
-          case (acc, (key, value)) =>
-            acc.updatedWith(key) {
-              case None                => Some(value)
-              case Some(existingValue) => Some(semigroup.combine(existingValue, value))
-            }
+        second.foldLeft(first) { case (acc, (key, value)) =>
+          acc.updatedWith(key) {
+            case None                => Some(value)
+            case Some(existingValue) => Some(semigroup.combine(existingValue, value))
+          }
         }
     }
 

@@ -1,7 +1,7 @@
 package exercises.action.fp.concurrent
 
 import exercises.action.fp._
-import exercises.dataprocessing.ThreadPoolUtil
+import exercises.dataprocessingpar.ThreadPoolUtil
 
 import scala.concurrent.duration._
 

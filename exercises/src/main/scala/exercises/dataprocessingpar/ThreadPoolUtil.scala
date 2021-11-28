@@ -1,14 +1,13 @@
-package answers.dataprocessing
+package exercises.dataprocessingpar
 
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.{Executors, ThreadFactory}
-
 import scala.concurrent.ExecutionContext
 
 // copied and adapted from cats-effect IOApp
 object ThreadPoolUtil {
 
-  def fixedSizeExecutionContext(threads: Int, prefix: String): ExecutionContext =
+  def fixedSizeExecutionContext(threads: Int, prefix: String = "compute"): ExecutionContext =
     ExecutionContext.fromExecutor(
       Executors.newFixedThreadPool(threads, threadFactory(prefix, daemon = true))
     )

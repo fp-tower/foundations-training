@@ -1,7 +1,7 @@
 package answers.action.fp.concurrent
 
 import answers.action.fp._
-import answers.dataprocessing.ThreadPoolUtil
+import answers.dataprocessingpar.ThreadPoolUtil
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration.{DurationInt, FiniteDuration}

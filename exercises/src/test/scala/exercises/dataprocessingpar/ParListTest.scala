@@ -1,8 +1,8 @@
-package exercises.dataprocessing
+package exercises.dataprocessingpar
 
+import exercises.dataprocessingpar.TemperatureExercises._
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
-import TemperatureExercises._
 
 class ParListTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks with ParListTestInstances {
 
@@ -14,7 +14,7 @@ class ParListTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks with P
       Sample("Africa", "Algeria", None, "Algiers", 8, 1, 2020, 89.7),
       Sample("Africa", "Algeria", None, "Algiers", 8, 1, 2020, 22.1),
       Sample("Africa", "Algeria", None, "Algiers", 8, 1, 2020, 34.7),
-      Sample("Africa", "Algeria", None, "Algiers", 8, 1, 2020, 99.0),
+      Sample("Africa", "Algeria", None, "Algiers", 8, 1, 2020, 99.0)
     )
     val parSamples = ParList.byPartitionSize(3, samples)
 
@@ -43,7 +43,7 @@ class ParListTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks with P
       Sample("Africa", "Algeria", None, "Algiers", 8, 1, 2020, 89.7),
       Sample("Africa", "Algeria", None, "Algiers", 8, 1, 2020, 22.1),
       Sample("Africa", "Algeria", None, "Algiers", 8, 1, 2020, 34.7),
-      Sample("Africa", "Algeria", None, "Algiers", 8, 1, 2020, 99.0),
+      Sample("Africa", "Algeria", None, "Algiers", 8, 1, 2020, 99.0)
     )
     val parSamples = ParList.byPartitionSize(3, samples)
 
@@ -57,7 +57,7 @@ class ParListTest extends AnyFunSuite with ScalaCheckDrivenPropertyChecks with P
       List(
         summaryListOnePass(samplesList),
         summaryParList(samples),
-        summaryParListOnePass(samples),
+        summaryParListOnePass(samples)
       ).foreach { other =>
         assert(reference.size == other.size)
         assert((reference.sum - other.sum).abs < 0.00001)

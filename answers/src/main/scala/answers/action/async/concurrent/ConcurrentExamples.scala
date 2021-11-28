@@ -1,7 +1,7 @@
 package answers.action.async.concurrent
 
 import answers.action.async._
-import answers.dataprocessing.ThreadPoolUtil
+import answers.dataprocessingpar.ThreadPoolUtil
 
 import scala.concurrent.duration._
 
