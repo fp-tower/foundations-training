@@ -21,7 +21,7 @@ If you don't have `sbt`, you can find instructions [here](https://www.scala-sbt.
 
 #### 3. Open your favorite IDE
 
-Open the file `exercises/function/ValueFunctionExercises.scala` and check your Scala plugin is working.
+Open the file `exercises/valfunction/ValueFunctionExercises.scala` and check your Scala plugin is working.
 
 ## SBT 101
 
