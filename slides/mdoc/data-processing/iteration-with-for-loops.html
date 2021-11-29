@@ -30,50 +30,6 @@ for (number <- list) {
 ```
 
 ---
-# Without `s` String interpolator
-
-<br>
-
-```scala mdoc:reset:silent
-val list = List(1, 8, -3, 12)
-```
-
-```scala mdoc
-for (number <- list) {
-  println("number is $number")
-}
-```
-
----
-# Other String interpolators
-
-.forty-two-left[
-## In standard library
-
-```scala mdoc
-println(f"PI is ${Math.PI}%1.2f")
-```
-]
-
-.fifty-two-right[
-## In other libraries
-
-```scala
-val subject = "functional programming"
-
-println(sql"subject = $subject")
-// res: Fragment = Fragment("subject = ?")
-```
-
-```scala
-val names = List("Eda", "Bob")
-
-json"{ names : $names }"
-// res: Json = "{ "names" : ["Eda", "Bob"] }"
-```
-]
-
----
 # Code block: curly braces
 
 .forty-seven-left[
@@ -261,7 +217,7 @@ val point  = Point(2, 5)
 for {
   shape  <- shapes
   number <- point
-} println(s"There is $number ${shape}(s)")
+} println(s"There are $number ${shape}")
 ```
 ]
 
@@ -269,7 +225,7 @@ for {
 ```scala mdoc
 shapes.foreach{ shape =>
   point.foreach { number =>
-    println(s"There is $number ${shape}(s)")
+    println(s"There are $number ${shape}")
   }
 }
 ```
@@ -433,7 +389,7 @@ background-image: url(../img/fp-tower/website-background-white.svg)
 
 class: middle, white
 
-# ForLoopExercises.scala
+# AggregationExercises.scala
 
 ---
 background-image: url(../img/foundation/iteration-for-pattern-1.svg)
