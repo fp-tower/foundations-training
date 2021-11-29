@@ -34,55 +34,6 @@ for (number <- list) {
 ```
 
 ---
-# Without `s` String interpolator
-
-<br>
-
-```scala
-val list = List(1, 8, -3, 12)
-```
-
-```scala
-for (number <- list) {
-  println("number is $number")
-}
-// number is $number
-// number is $number
-// number is $number
-// number is $number
-```
-
----
-# Other String interpolators
-
-.forty-two-left[
-## In standard library
-
-```scala
-println(f"PI is ${Math.PI}%1.2f")
-// PI is 3.14
-```
-]
-
-.fifty-two-right[
-## In other libraries
-
-```scala
-val subject = "functional programming"
-
-println(sql"subject = $subject")
-// res: Fragment = Fragment("subject = ?")
-```
-
-```scala
-val names = List("Eda", "Bob")
-
-json"{ names : $names }"
-// res: Json = "{ "names" : ["Eda", "Bob"] }"
-```
-]
-
----
 # Code block: curly braces
 
 .forty-seven-left[
@@ -306,11 +257,11 @@ val point  = Point(2, 5)
 for {
   shape  <- shapes
   number <- point
-} println(s"There is $number ${shape}(s)")
-// There is 2 triangle(s)
-// There is 5 triangle(s)
-// There is 2 square(s)
-// There is 5 square(s)
+} println(s"There are $number ${shape}")
+// There are 2 triangle
+// There are 5 triangle
+// There are 2 square
+// There are 5 square
 ```
 ]
 
@@ -318,13 +269,13 @@ for {
 ```scala
 shapes.foreach{ shape =>
   point.foreach { number =>
-    println(s"There is $number ${shape}(s)")
+    println(s"There are $number ${shape}")
   }
 }
-// There is 2 triangle(s)
-// There is 5 triangle(s)
-// There is 2 square(s)
-// There is 5 square(s)
+// There are 2 triangle
+// There are 5 triangle
+// There are 2 square
+// There are 5 square
 ```
 ]
 
@@ -474,7 +425,7 @@ def sum(numbers: List[Int]): Int = {
 
 ```scala
 sum(List(1, 8, -3, 12))
-// res20: Int = 18
+// res17: Int = 18
 ```
 ]
 
@@ -487,7 +438,7 @@ background-image: url(../img/fp-tower/website-background-white.svg)
 
 class: middle, white
 
-# ForLoopExercises.scala
+# AggregationExercises.scala
 
 ---
 background-image: url(../img/foundation/iteration-for-pattern-1.svg)
